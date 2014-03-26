@@ -1,27 +1,28 @@
 var Calculator = (function() {
-
-    // Private stuff up here
-    var converterValue = 2.20462;
-
-    // Public methods here
     return {
-        convertFromPoundsToKIlo: function(weight) {
-            var num = parseFloat(weight);
-            if (isNaN(num) == true) {
-                throw new Error ("Not a number");
-            }
-            num = weight * converterValue;
-            return num;
-        },
+        calculate: function(x,y,operator) {
+             var x = parseInt(x);
+             var y = parseInt(y);
+             var operator = operator;
 
-        convertFromMetricToImperial: function(weight) {
-            var num = parseFloat(weight);
-            if (isNaN(num) == true) {
-                throw new Error ("Not a number");
-            }
-             num = num / converterValue;
-           return num;
+            console.log(x);
+            console.log(y);
+            console.log(operator);
+            
+            if (operator === "x"){
+              number = x * y;
+            } 
+            else if (operator === "+"){
+              number = x + y;
+            } 
+            else if (operator === "-"){
+               number = x - y;
+            } else if (operator === "/"){
+              number = x/y;
+            }  
+            console.log(number);
+             return number;
+            
         }
-
     }
 }())
