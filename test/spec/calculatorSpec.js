@@ -1,8 +1,8 @@
 describe("My Calculator", function() {
-    it("should convert imperial weight to metric", function() {
-         expect(Calculator.convertFromPoundsToKIlo(1)).toBe(2.20462);
+    it("should do simple calculations", function() {
+         expect(Calculator.calculate(1,100,"x")).toBe(100);
     })
     it("should be able to deal with strings", function(){
-        expect(function() {Calculator.convertFromPoundsToKIlo("hello")}).toThrow(new Error("Not a number"))
+        expect(function() {Calculator.calculate("hello")}).toThrow(new Error("Not a number"))
     })
 })

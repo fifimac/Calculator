@@ -4,6 +4,9 @@ var Calculator = (function() {
              var x = parseInt(x);
              var y = parseInt(y);
              var operator = operator;
+             if (isNaN(x) == true) {
+                throw new Error ("Not a number");
+            }
 
             console.log(x);
             console.log(y);
