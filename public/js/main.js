@@ -5,9 +5,9 @@ $(document).ready(function() {
         var operator = $("#operator").val();
 
         // error logic
-        if ((input1.length == 0) || (input2.length == 0) )
+        if ((input1.length == 0) || (input2.length == 0) || (typeof operator === 'undefined') )  
         {
-            alert("You can't leave either input blank")
+            alert("You can't leave input areas blank")
         }
 
         // calculator logic
@@ -20,6 +20,7 @@ $(document).ready(function() {
     $("#clearbutton").click(function() {
         $("#num2").val('');
         $("#num1").val('');
+        $("#operator").val('');
         $("#answer").val('');
     });
 
