@@ -1,61 +1,134 @@
-<!DOCTYPE HTML>
+<!doctype html>
 <html>
-	<head>
-		<title>Converter Example</title>
-		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-		<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,600|Source+Code+Pro" rel="stylesheet" />
-		<!--[if lte IE 8]><script src="js/vendor/html5shiv.js" type="text/javascript"></script><![endif]-->
-		<!-- Bootstrap core CSS -->
-    	<link href="css/bootstrap.min.css" rel="stylesheet">
- 
-        
-        <script src="js/vendor/jquery-1.10.2.min.js"></script>
-        <script src="js/vendor/bootstrap.min.js"></script>
-        <script src="js/calculator.js"></script>
-        <script src="js/main.js"></script>
-	</head>
-	<body>
-		<div class="container">
-			<!-- Intro  -->
-			<div class="jumbotron">
-			    <h1>Hello world of client-side BDD!</h1>
-			    <p>This is an example of a simple calculator. </p>
-			</div>
-			<div class="panel panel-default">
-				<div class="panel-heading">
-					<h3 class="panel-title">Calculator</h3>
-				</div>
-				<div class="panel-body"> 
-					<div class="row text-center">
-						<div class="col-md-2">
-							<input class="" type="number" id="num1" autofocus="" placeholder="1"/>
-						</div>
-						<div class="col-md-2">
-							<input id="operator" placeholder="x">
-							 
-						</div>
-						<div class="col-md-2">
-							<input class="" type="number" id="num2" autofocus="" placeholder="1"/>
-						</div>
-						<div class="col-md-2">
-							<button class="btn btn-success" id="equals">=</button>
-						</div>
-						<div class="col-md-2">
-							<input class="" type="number" id="answer" autofocus="" placeholder="answer"/>
-						</div>
-						<div class="col-md-2">
-							<button class="btn btn-danger" id="clearbutton">C</button>	
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- Footer -->
-			<div id="footer">
-				&copy; BDD Example. <br>
-				<img src="img/GitHub.png"> <a href="https://github.com/fifimac/Calculator"> - here </a> you will find a fancy readme.md
-				
-
-			</div>
-		</div>
-	</body>
+<head>
+    <title>My Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://demos.jquerymobile.com/1.4.2/css/themes/default/jquery.mobile-1.4.2.min.css">
+    <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+    <script src="http://demos.jquerymobile.com/1.4.2/js/jquery.mobile-1.4.2.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCl7O2eoF0ieZTfMnQbq8Y417xcKUkPKhc&sensor=false">
+    </script>
+    <script type="text/javascript">
+        function initialize() {
+            var mapOptions = {
+                center: new google.maps.LatLng(-34.397, 150.644),
+                zoom: 8
+            };
+            var map = new google.maps.Map(document.getElementById("map-canvas"),
+                    mapOptions);
+        }
+        google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+</head>
+<body>
+<div data-role="page">
+    <!-- center page content -->
+    <!-- header -->
+    <div data-role="header">
+        <h1>Mapsago</h1>
+        <a href="#leftPanel" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-btn-icon-left ui-icon-bars">Search</a>
+        <a href="#rightPanel" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-btn-icon-right ui-icon-bars">Info</a>
+    </div>
+    <!-- /header -->
+    <div id="content" data-role="content">
+        <!--map-->
+        <div id="map-canvas"></div>
+    </div>
+    <!-- /center page content -->
+    <!-- Panel - left -->
+    <div data-role="panel" id="leftPanel" data-display="overlay" class="ui-panel ui-panel-position-left ui-panel-display-reveal ui-body-inherit ui-panel-animate ui-panel-open">
+        <div class="panelHeader">
+            <h1>Search</h1>
+            <a href="#" data-rel="close" class="ui-btn ui-icon-delete ui-btn-icon-notext ui-corner-all ">No text</a>
+        </div>
+        <div class="ui-panel-inner">
+            <p>Select Topic(s) of Choice:</p>
+            <!--topic selection-->
+            <!--option 1-->
+            <fieldset data-role="controlgroup" data-mini="true">
+                <input type="checkbox" name="checkbox-v-6a" id="checkbox-v-6a">
+                <label for="checkbox-v-6a">Art and Culture</label>
+                <input type="checkbox" name="checkbox-v-6c" id="checkbox-v-6c">
+                <label for="checkbox-v-6c">Technology and Applied Sciences</label>
+                <input type="checkbox" name="checkbox-v-6c" id="checkbox-v-6d">
+                <label for="checkbox-v-6d">People and Self</label>
+                <input type="checkbox" name="checkbox-v-6c" id="checkbox-v-6e">
+                <label for="checkbox-v-6e">Philosophy and Thinking</label>
+                <input type="checkbox" name="checkbox-v-6c" id="checkbox-v-6f">
+                <label for="checkbox-v-6f">Religion and Spirituality</label>
+                <input type="checkbox" name="checkbox-v-6c" id="checkbox-v-6g">
+                <label for="checkbox-v-6g">Social Sciences and Society</label>
+            </fieldset>
+            <!--option 2-->
+            <!--<button class="ui-btn ui-corner-all">Art</button>-->
+            <!--<button class="ui-btn ui-corner-all">Art</button>-->
+            <!--<button class="ui-btn ui-corner-all">Art</button>-->
+            <!--<button class="ui-btn ui-corner-all">Art</button>-->
+            <!-- / topic selection-->
+            <!--date range selector-->
+            <br/>
+            <legend>Select Date Range of Choice:</legend>
+            <form>
+                <div data-role="rangeslider">
+                    <input type="range" name="range-1a" id="range-1a" min="0" max="2014" value="1500">
+                    <input type="range" name="range-1b" id="range-1b" min="0" max="2014" value="2014">
+                </div>
+            </form>
+            <!--submit search-->
+            <button type="submit" id="submit-6" class="ui-shadow ui-btn ui-corner-all ui-mini">Filtered Search</button>
+        </div>
+    </div>
+    <!--/ Panel - right -->
+    <div data-role="panel" id="rightPanel" data-display="overlay" data-position="right" class="ui-panel ui-panel-position-right ui-panel-display-reveal ui-body-inherit ui-panel-animate ui-panel-open">
+        <div class="panelHeader">
+            <h1>Pins</h1>
+            <a href="#" data-rel="close" class="ui-btn ui-icon-delete ui-btn-icon-notext ui-corner-all ">No text</a>
+        </div>
+        <div class="ui-panel-inner">
+            <!--collapsibleset-->
+            <div data-role="collapsibleset" data-theme="a" data-content-theme="a" data-inset="false">
+                <div data-role="collapsible">
+                    <h2>Item 1</h2>
+                    <img src="http://placehold.it/240x150">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent interdum tempus enim ac posuere. Nulla facilisi. Vivamus hendrerit nunc id metus dapibus posuere. Suspendisse ut blandit velit. Nulla aliquam tincidunt aliquet. Maecenas aliquet dignissim diam eget egestas. Aliquam vitae odio vitae quam aliquet varius ullamcorper vitae urna.</p>
+                    <a href="#">Link</a>
+                    <button class="ui-btn ui-corner-all">Read More</button>
+                </div>
+                <div data-role="collapsible">
+                    <h2>Item 2</h2>
+                    <img src="http://placehold.it/240x150">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent interdum tempus enim ac posuere. Nulla facilisi. Vivamus hendrerit nunc id metus dapibus posuere. Suspendisse ut blandit velit. Nulla aliquam tincidunt aliquet. Maecenas aliquet dignissim diam eget egestas. Aliquam vitae odio vitae quam aliquet varius ullamcorper vitae urna.</p>
+                    <a href="#">Link</a>
+                    <button class="ui-btn ui-corner-all">Read More</button>
+                </div>
+                <div data-role="collapsible">
+                    <h2>Item 3</h2>
+                    <img src="http://placehold.it/240x150">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent interdum tempus enim ac posuere. Nulla facilisi. Vivamus hendrerit nunc id metus dapibus posuere. Suspendisse ut blandit velit. Nulla aliquam tincidunt aliquet. Maecenas aliquet dignissim diam eget egestas. Aliquam vitae odio vitae quam aliquet varius ullamcorper vitae urna.</p>
+                    <a href="#">Link</a>
+                    <button class="ui-btn ui-corner-all">Read More</button>
+                </div>
+                <div data-role="collapsible">
+                    <h2>Item 4</h2>
+                    <img src="http://placehold.it/240x150">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent interdum tempus enim ac posuere. Nulla facilisi. Vivamus hendrerit nunc id metus dapibus posuere. Suspendisse ut blandit velit. Nulla aliquam tincidunt aliquet. Maecenas aliquet dignissim diam eget egestas. Aliquam vitae odio vitae quam aliquet varius ullamcorper vitae urna.</p>
+                    <a href="#">Link</a>
+                    <button class="ui-btn ui-corner-all">Read More</button>
+                </div>
+                <div data-role="collapsible">
+                    <h2>Item 5</h2>
+                    <img src="http://placehold.it/240x150">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent interdum tempus enim ac posuere. Nulla facilisi. Vivamus hendrerit nunc id metus dapibus posuere. Suspendisse ut blandit velit. Nulla aliquam tincidunt aliquet. Maecenas aliquet dignissim diam eget egestas. Aliquam vitae odio vitae quam aliquet varius ullamcorper vitae urna.</p>
+                    <a href="#">Link</a>
+                    <button class="ui-btn ui-corner-all">Read More</button>
+                </div>
+            </div>
+            <!-- /collapsible -->
+        </div>
+    </div>
+    <!--/ Panel - right -->
+</div>
+<!-- /page -->
+</body>
 </html>
